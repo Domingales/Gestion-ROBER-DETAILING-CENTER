@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ROBER DETAILING CENTER — Gestión</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand__logo">RDC</div>
+      <div class="brand__text">
+        <div class="brand__name">ROBER DETAILING CENTER</div>
+        <div class="brand__meta">Gestión · Facturas · Albaranes · Caja · Stock</div>
+      </div>
+    </div>
+
+    <div class="topbar__actions">
+      <button class="btn btn--ghost" id="btnBackupJson">Exportar backup (JSON)</button>
+      <button class="btn btn--ghost" id="btnRestoreJson">Importar backup (JSON)</button>
+      <input type="file" id="fileRestoreJson" accept="application/json" hidden />
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav class="nav" id="mainNav">
+        <a class="nav__item" href="#/dashboard" data-route="dashboard">Panel</a>
+        <a class="nav__item" href="#/cash" data-route="cash">Caja diaria</a>
+        <a class="nav__item" href="#/clients" data-route="clients">Clientes</a>
+        <a class="nav__item" href="#/deliverynotes" data-route="deliverynotes">Albaranes</a>
+        <a class="nav__item" href="#/invoices" data-route="invoices">Facturas</a>
+        <a class="nav__item" href="#/expenses" data-route="expenses">Gastos</a>
+        <a class="nav__item" href="#/stock" data-route="stock">Stock</a>
+        <a class="nav__item" href="#/reports" data-route="reports">Informes</a>
+        <a class="nav__item" href="#/importexport" data-route="importexport">Importar / Exportar (Excel)</a>
+        <a class="nav__item" href="#/settings" data-route="settings">Ajustes</a>
+      </nav>
+
+      <div class="sidebar__foot">
+        <div class="hint">
+          <div class="hint__title">Consejo</div>
+          <div class="hint__text">
+            Haz un <b>backup JSON</b> al final de cada semana. Si cambias de PC, restaura el backup.
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content__head">
+        <h1 class="title" id="viewTitle">Panel</h1>
+        <div class="content__headActions" id="viewActions"></div>
+      </div>
+
+      <section class="card">
+        <div id="app"></div>
+      </section>
+
+      <footer class="footer">
+        <span id="footerStatus">Listo.</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="db.js"></script>
+  <script src="utils.js"></script>
+  <script src="modal.js"></script>
+  <script src="csv.js"></script>
+  <script src="print.js"></script>
+
+  <script src="modules/dashboard.js"></script>
+  <script src="modules/cash.js"></script>
+  <script src="modules/clients.js"></script>
+  <script src="modules/deliverynotes.js"></script>
+  <script src="modules/invoices.js"></script>
+  <script src="modules/expenses.js"></script>
+  <script src="modules/stock.js"></script>
+  <script src="modules/reports.js"></script>
+  <script src="modules/importexport.js"></script>
+  <script src="modules/settings.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
