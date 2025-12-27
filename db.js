@@ -1,4 +1,4 @@
-﻿(function(){
+(function(){
   const KEY = 'rober_detailing_center_db_v1';
 
   function nowISO(){ return new Date().toISOString(); }
